@@ -17,9 +17,6 @@
   },
   "homepage": "https://github.com/morrislaptop/laravel-elixir6-nunjucks#readme",
   "dependencies": {
-    "gulp-nunjucks": "^2.3.0"
-  },
-  "peerDependencies": {
     "gulp-nunjucks-render": "^2.0.0"
   }
 }

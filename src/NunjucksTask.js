@@ -1,8 +1,3 @@
-// import CleanCss from 'clean-css';
-// import gulpIgnore from 'gulp-ignore';
-// import gulpif from 'gulp-if';
-// import map from 'vinyl-map';
-
 let gulpNunjucks;
 
 class NunjucksTask extends Elixir.Task {
@@ -24,6 +19,14 @@ class NunjucksTask extends Elixir.Task {
         .pipe(this.saveAs(gulp))
         .pipe(this.onSuccess())
     );
+  }
+
+  /**
+   * Register file watchers.
+   */
+  registerWatchers() {
+      this.watch(this.src.path)
+          .ignore(this.output.path);
   }
 
   nunjucks() {

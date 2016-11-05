@@ -3,9 +3,9 @@ const NunjucksTask = require('./NunjucksTask')
 
 Elixir.extend(
   'nunjucks',
-  function(src, outputDir, baseDir, options = {}) {
+  function(src = 'njk', output, baseDir, options = {}) {
     new NunjucksTask(
-      'nunjucks', getPaths(src, baseDir, outputDir), options
+      'nunjucks', getPaths(src, baseDir, output), options
     );
   }
 );
@@ -18,8 +18,8 @@ Elixir.extend(
  * @param  {string|null}  output
  * @return {GulpPath}
  */
- function getPaths(src, baseDir, output) {
-   return new Elixir.GulpPaths()
+function getPaths(src, baseDir, output) {
+  return new Elixir.GulpPaths()
     .src(src, baseDir || Elixir.config.viewPath)
     .output(output || Elixir.config.publicPath);
- }
+}
